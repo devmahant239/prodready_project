@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment Variables
+.env
+.env.local
+*.env
+!.env.example
+
+# Build & Log Outputs
+dist/
+build/
+*.log
+logs/
+
+# Database Files
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+
+# OS & Editor Files
+.DS_Store
+.vscode/
+.idea/
