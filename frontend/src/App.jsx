@@ -97,7 +97,7 @@ export default function App() {
           fontWeight: 500,
         }}
       >
-        Initializing Auth Suite...
+        Initializing Auth Suite - CI/CD v2...
       </div>
     );
   }
