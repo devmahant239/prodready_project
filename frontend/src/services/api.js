@@ -1,4 +1,5 @@
-const API_BASE_URL = 'http://localhost:5000/api';
+// Picks up VITE_API_BASE_URL from .env.local (dev) or .env.production (prod build)
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
 
 /**
  * Helper wrapper around standard fetch API with automatic JWT header injection.
@@ -28,7 +29,7 @@ async function request(endpoint, options = {}) {
     return data;
   } catch (error) {
     if (error.name === 'TypeError' && error.message === 'Failed to fetch') {
-      throw new Error('Cannot connect to backend server. Make sure backend is running on http://localhost:5000');
+      throw new Error(`Cannot connect to backend server at ${API_BASE_URL}`);
     }
     throw error;
   }
